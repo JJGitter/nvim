@@ -21,6 +21,15 @@ return require('packer').startup(function(use)
   use 'bluz71/vim-nightfly-colors'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
+  use 'neovim/nvim-lspconfig' -- LSP support
+  use 'williamboman/mason.nvim' -- Mason for managing LSP servers
+  use 'williamboman/mason-lspconfig.nvim' -- Mason-LSPConfig bridge
+  use {
+  'lewis6991/gitsigns.nvim',
+  config = function()
+    require('gitsigns').setup()
+  end
+}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
