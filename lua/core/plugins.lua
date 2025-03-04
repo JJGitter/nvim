@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig' -- LSP support
   use 'williamboman/mason.nvim' -- Mason for managing LSP servers
   use 'williamboman/mason-lspconfig.nvim' -- Mason-LSPConfig bridge
+  use 'github/copilot.vim'
   use {
   'lewis6991/gitsigns.nvim',
   config = function()
