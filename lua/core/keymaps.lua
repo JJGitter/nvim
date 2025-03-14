@@ -17,3 +17,6 @@ vim.opt.expandtab = true
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>')
 vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>f', function()
+  vim.fn.getline(vim.fn.search("^[^ \t#/]\\{2}.*[^:]\\s*$", 'bW'))
+end)
