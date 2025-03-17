@@ -11,7 +11,19 @@ require("mason-lspconfig").setup({
 local lspconfig = require("lspconfig")
 
 -- Configure LSP servers
-lspconfig.lua_ls.setup {}
+lspconfig.lua_ls.setup {
+  settings = {
+    Lua = {
+      workspace = {
+        maxPreload = 2000,  -- Increase the max preload files
+        preloadFileSize = 1000000,  -- Increase the file size limit
+      },
+      diagnostics = {
+        globals = { "wait", "printmsg", "printcmsg", "stop" },  -- Add any custom globals if needed
+      }
+    }
+  }
+}
 lspconfig.clangd.setup {}
 lspconfig.groovyls.setup {}
 
