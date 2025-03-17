@@ -18,3 +18,7 @@ lspconfig.groovyls.setup {}
 
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.o.ignorecase = true
+vim.o.smartcase = true -- Do not ignore case if the search pattern contains uppercase characters
+vim.o.incsearch = true -- Show search matches as you type
+
