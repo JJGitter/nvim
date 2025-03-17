@@ -21,6 +21,7 @@ return require('packer').startup(function(use)
   use 'bluz71/vim-nightfly-colors'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-lua/plenary.nvim'
+  use 'f-person/git-blame.nvim'
   use 'neovim/nvim-lspconfig' -- LSP support
   use 'williamboman/mason.nvim' -- Mason for managing LSP servers
   use 'williamboman/mason-lspconfig.nvim' -- Mason-LSPConfig bridge
