@@ -22,3 +22,16 @@ vim.o.ignorecase = true
 vim.o.smartcase = true -- Do not ignore case if the search pattern contains uppercase characters
 vim.o.incsearch = true -- Show search matches as you type
 
+-- Highlight yanked text
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+-- Sync nvim clipboard with system clipboard
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
